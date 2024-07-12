@@ -1,17 +1,17 @@
 <script setup>
-
-import AppHeader from './components/AppHeader.vue'
-import AppFilmContain from './components/AppFilmContain.vue'
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 </script>
 
 <template>
 
 <AppHeader />
-<AppFilmContain />
+<AppMain />
 
 </template>
 
-<style scoped>
+<style lang="scss">
+@use './styles/general.scss' as * ;
 
 </style>

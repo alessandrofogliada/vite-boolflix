@@ -1,8 +1,8 @@
 <script>
-export default {
-    name:'AppHeader'
-}
 
+export default {
+    name:'AppHeader',
+}
 </script>
 
 
@@ -15,10 +15,11 @@ export default {
 
         <!-- Barra e tasto di ricerca  -->
         <div class="barradiricerca">
-            <input type="text" placeholder="Search Film">
-            <button>Search</button>
+            <input v-model="inputFilm" type="text" placeholder="Search Film">
+            <button @click="richiestaUtente">Search</button>
         </div>
     </div>
+
 </template>
 
 
@@ -38,5 +39,6 @@ h1{
     display: flex;
     align-items: center;
 }
+
 
 </style>

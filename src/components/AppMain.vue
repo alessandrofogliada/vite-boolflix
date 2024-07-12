@@ -1,6 +1,11 @@
 <script>
+import AppFilm from './AppFilm.vue'
+
 export default {
-    name:'AppFilmContain'
+    name:"AppMain",
+    components:{
+        AppFilm,
+    }
 }
 
 </script>
@@ -11,7 +16,7 @@ export default {
     <div class="container">
         <!-- container per accentrare i contenuti  -->
         <div class="containeraccentratore">
-
+            <AppFilm />
         </div>
     </div>
 </template>
@@ -28,8 +33,10 @@ export default {
     width: 800px;
     margin: 0 auto;
     min-height: 750px;
+    display: flex;
+    flex-wrap: wrap;
+    // debug
     background-color: brown;
-    padding-top: 20px;
 }
 
 </style>
