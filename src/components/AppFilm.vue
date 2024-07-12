@@ -7,10 +7,10 @@ export default {
 
 <template>
     <div class="card">
-        <h2>Titolo</h2>
-        <h2>Titolo Originale</h2>
-        <h4>Voto</h4>
-        <h5>Overview</h5>
+        <h2>{{ movie.title }}</h2>
+        <h2>{{ movie.original_title }}</h2>
+        <h5>{{ movie.original_language }}</h5>
+        <h4>{{ movie.vote_average }}</h4>
     </div>
 </template>
 
