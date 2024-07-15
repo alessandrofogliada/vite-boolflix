@@ -19,32 +19,41 @@ export default{
             store,
         }
     },
+
     methods: {
+
         // metodo che fa la chiamata ad axios 
         getFilm(){
+
+            let endPoint = store.apiUrl;
+
+            if(store.inputFilm !== ''){
+                endPoint += `&query=${store.inputFilm}`
+
             axios.
-            get(store.apiUrl)
-            .then(res => {
-                console.log(res.data);
-                // con il seguente codice diciamo di salvare la risposta di axios in store.movieFound 
-                store.moviesFound = res.data
-            })
+            get(endPoint)
+                .then(res => {
+                    console.log(res.data);
+                    // con il seguente codice diciamo di salvare la risposta di axios in store.movieFound 
+                    store.moviesFound = res.data.result;
+                })
             // Usiamo catch per farci segnalare l'errore dell'API 
-            .catch(err =>{
-                console.log(err);
-            })
-        }
+                .catch(err =>{
+                    console.log(err);
+                })
+            }
+        },
     },
-    created() {
+created() {
         this.getFilm();
-    },
+    }
 }
 
 </script>
 
 <template>
 
-<AppHeader />
+<AppHeader @search="getFilm"/>
 <AppMain />
 
 </template>

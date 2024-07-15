@@ -1,20 +1,20 @@
 <script>
-// import dello state management 
-import { store } from '../store'
 
 export default {
     name:"AppFilm",
-    data(){
-        store
-    }
+    props:{
+        info: {
+            type: Object,
+        }
+    },
 }
 </script>
 
 
 <template>
     <div class="card">
-        <h2>{{movie.title}}</h2>
-        <h2>movie.original_title </h2>
+        <h2>{{info.details.title}}</h2>
+        <h2>{{info.details.original_title}} </h2>
         <h5>movie.original_language </h5>
         <h4>movie.vote_average </h4>
     </div>

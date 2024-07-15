@@ -1,7 +1,13 @@
 <script>
+import { store } from '../store';
 
 export default {
     name:'AppHeader',
+    data() {
+        return {
+            store
+        }
+    },
 }
 </script>
 
@@ -15,8 +21,8 @@ export default {
 
         <!-- Barra e tasto di ricerca  -->
         <div class="barradiricerca">
-            <input v-model="inputFilm" type="text" placeholder="Search Film">
-            <button @click="richiestaUtente">Search</button>
+            <input v-model="store.inputFilm" @keyup.enter="$emit('search')" type="text" placeholder="Search Film">
+            <button @click="$emit('search')">Search</button>
         </div>
     </div>
 
@@ -33,6 +39,7 @@ export default {
 }
 h1{
     color: red;
+    padding-top: 25px;
 }
 
 .barradiricerca{
