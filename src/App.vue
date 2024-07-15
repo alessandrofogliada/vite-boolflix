@@ -34,8 +34,9 @@ export default{
             get(endPoint)
                 .then(res => {
                     console.log(res.data);
+                    console.log("res-data-result", res.data)
                     // con il seguente codice diciamo di salvare la risposta di axios in store.movieFound 
-                    store.moviesFound = res.data.result;
+                    store.moviesFound = res.data.results;
                 })
             // Usiamo catch per farci segnalare l'errore dell'API 
                 .catch(err =>{

@@ -6,5 +6,3 @@ export const store = reactive({
     // enpoint da dove partira la richiesta da axios 
     apiUrl:  "https://api.themoviedb.org/3/search/movie?api_key=5b28c1b519239a915e8f8bd1c1614e06&query"
 })
-
-// 'https://api.themoviedb.org/3/search/movie?api_key=5b28c1b519239a915e8f8bd1c1614e06&query=ritorno+al+futuro' 
