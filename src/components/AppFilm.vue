@@ -33,8 +33,11 @@ export default {
         <h2>{{info.details.title}}</h2>
         <h2>{{info.details.original_title}} </h2>
         <img v-if="info.details.original_language === 'es'" :src="languageFlag[0]"  alt="spain flag">
-        <img v-else="info.details.original_language === 'en'" :src="languageFlag[1]" alt="englad flag">
-        <img v-else="info.details.original_language === 'it'" :src="languageFlag[2]" alt="englad flag">
+        <img v-else-if="info.details.original_language === 'en'" :src="languageFlag[1]" alt="englad flag">
+        <img v-else-if="info.details.original_language === 'it'" :src="languageFlag[2]" alt="italy flag">
+        <img v-else-if="info.details.original_language === 'fr'" :src="languageFlag[4]" alt="france flag">
+        <img v-else-if="info.details.original_language === 'de'" :src="languageFlag[5]" alt="german flag">
+        <img v-else="info.details.original_language === 'ja'" :src="languageFlag[6]" alt="japan flag">
         <h4>{{info.details.vote_average}} </h4>
     </div>
 </template>
